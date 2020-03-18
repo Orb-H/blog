@@ -1,11 +1,9 @@
-title: Your awesome title
+title: "Orb_H's blog"
 author:
-  name: GitHub User
-  email: your-email@domain.com
-description: > # this means to ignore newlines until "show_excerpts:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  name: Orb_H
+  email: orb.cov@gmail.com
+description: >
+  Orb_H's blog!
 
 show_excerpts: false # set to true to show excerpts on the homepage
 
@@ -16,18 +14,18 @@ minima:
 
   # generate social links in footer
   social_links:
-    twitter: jekyllrb
-    github:  jekyll
+    twitter: orb_h_
+    github:  Orb-H
     # devto: jekyll
     # dribbble: jekyll
     # facebook: jekyll
     # flickr:   jekyll
     # instagram: jekyll
-    # linkedin: jekyll
+    linkedin: jongryeol-han-5761991a0
     # pinterest: jekyll
     # youtube: jekyll
-    # youtube_channel: UC8CXR0-3I70i1tfPg1PAE1g
-    # youtube_channel_name: CloudCannon
+    youtube_channel: UC0unrsegI_KYXmDV13xLRYA
+    youtube_channel_name: Orb_H
     # telegram: jekyll
     # googleplus: +jekyll
     # microdotblog: jekyll
@@ -58,3 +56,6 @@ theme: minima
 plugins:
  - jekyll-feed
  - jekyll-seo-tag
+
+url: "https://orb-h.github.io"
+baseurl: "/blog"
