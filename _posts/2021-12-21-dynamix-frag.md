@@ -5,6 +5,7 @@ latex_needed: true
 comment: true
 
 excerpt: "소량의 데이터와 엑셀을 사용하여 Frag 공식의 대략적인 형태를 분석한다."
+topic: "Dynamix Frag 공식 구하기"
 category:
   - "Data Analysis"
   - "Dynamix"
