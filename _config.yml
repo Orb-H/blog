@@ -60,5 +60,7 @@ plugins:
 url: "https://orb-h.github.io"
 baseurl: "/blog"
 
+permalink: ":title"
+
 disqus:
   shortname: "orb-h-github-io-blog"
