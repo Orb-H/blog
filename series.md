@@ -12,7 +12,7 @@ permalink: /series/
 <ul>
 {%- assign items = topic.items | sort: "date" -%}
 {%- for post in topic.items reversed -%}
-    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
 {%- endfor -%}
 </ul>
 {%- endfor -%}
