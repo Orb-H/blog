@@ -1,2 +1,20 @@
 // Placeholder to allow defining custom styles that override everything else.
 // (Use `_sass/minima/custom-variables.scss` to override variable defaults)
+
+
+#toc {
+    border: lightgray 1px solid;
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0 30px 0;
+    list-style-type: none;
+
+    ul, li {
+        margin: 0;
+        list-style-type: none;
+    }
+}
+
+ul ul, ol ol {
+    padding-left: 2em;
+}

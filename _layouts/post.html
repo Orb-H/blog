@@ -18,6 +18,7 @@ layout: default
   });
 </script>
 {%- endif -%}
+<script src="{{ site.baseurl }}/scripts/init.js"></script>
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
@@ -42,6 +43,10 @@ layout: default
         {% endfor %}
       {%- endif -%}</p>
   </header>
+
+  <ul id="toc">
+      <li style="font-size:20px;font-weight:bold;">목차</li>
+  </ul>
 
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
