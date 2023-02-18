@@ -7,3 +7,7 @@
 #
 layout: home
 ---
+
+<script>
+  window.location.replace('https://blog.orbithv.dev/');
+</script>
