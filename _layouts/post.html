@@ -44,6 +44,10 @@ layout: default
       {%- endif -%}</p>
   </header>
 
+  {%- if jekyll.environment == "production" -%}
+    <p><a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fblog.orbithv.dev%2F{{ page.url }}&count_bg=%230066FF&title_bg=%23FF9900&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a></p>
+  {%- endif -%}
+
   <ul id="toc">
       <li style="font-size:20px;font-weight:bold;">목차</li>
   </ul>

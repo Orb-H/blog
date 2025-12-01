@@ -1,9 +1,9 @@
-title: "Orb_H's blog"
+title: "OrbitHv's π-orbit"
 author:
-  name: Orb_H
+  name: OrbitHv
   email: orb.cov@gmail.com
 description: >
-  Orb_H's blog!
+  OrbitHv's blog!
 
 show_excerpts: true # set to true to show excerpts on the homepage
 
@@ -57,8 +57,8 @@ plugins:
  - jekyll-feed
  - jekyll-seo-tag
 
-url: "https://orb-h.github.io"
-baseurl: "/blog"
+url: "https://blog.orbithv.dev/"
+baseurl: ""
 
 permalink: ":title"
 

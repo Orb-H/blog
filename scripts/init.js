@@ -6,7 +6,6 @@ function item_init() {
     var cur_toc = toc;
     var depth = 0;
     var nums = [0, 1, 1, 1];
-    var article = document.getElementsByTagName("article")[0];
 
     for(var i = 0; i < headings.length; i++) {
         var element = headings[i];
@@ -40,10 +39,10 @@ function item_init() {
 
         prefix2 = prefix.substr(0, prefix.length - 1);
         var li = document.createElement("li");
-        li.innerHTML = "<a href=\"#s-" + prefix2 + "\">" + prefix + "</a> " + element.textContent.replace("]#[", "");
+        li.innerHTML = "<a href=\"#s-" + prefix2 + "\">" + prefix + "</a> " + element.textContent;
         cur_toc.append(li);
 
-        element.innerHTML = "<a href=\"#toc\" id=s-" + prefix2 + ">" + prefix + "</a> " + element.innerHTML; 
+        element.innerHTML = "<a href=\"#toc\" id=s-" + prefix2 + ">" + prefix + "</a> " + element.innerHTML;
         depth = new_depth;
     }
 
