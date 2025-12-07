@@ -14,14 +14,17 @@ RUN JEKYLL_ENV=production bundle exec jekyll build --destination /usr/share/ngin
 # Stage 2: Serve the static site with Nginx
 FROM nginx:alpine
 
+# Remove default Nginx configuration
+RUN rm /etc/nginx/conf.d/default.conf
+
+# Copy custom Nginx configuration
+COPY _cloudbuild/default.conf /etc/nginx/conf.d/default.conf
+
 # Copy the built site from the builder stage to the Nginx web root
 COPY --from=builder /usr/share/nginx/html /usr/share/nginx/html
 
 # Expose port 8080 (Cloud Run default port)
 EXPOSE 8080
-
-# Update Nginx configuration to listen on port 8080
-RUN sed -i 's/listen\s*80;/listen 8080;/' /etc/nginx/conf.d/default.conf
 
 # Command to run Nginx
 CMD ["nginx", "-g", "daemon off;"]
