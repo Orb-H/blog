@@ -4,15 +4,6 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+OrbitHv의 블로그입니다. 애초에 글을 잘 안 쓰다보니 포스트 자체가 거의 없습니다. 몇 편에 걸쳐서 글을 쓰려고 하다가 중간에 관두는 일도 많습니다. 그래도 뭔가 기록해야할 것들은 남기려고 노력합니다.
 
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
+주제는 "아무거나"입니다. 이 도메인의 다른 페이지들(프로젝트 목록 페이지 등)에서는 그 주제에 맞는 글을 쓰지만, 여기서는 아무 주제나 다 다룹니다. 개발을 업으로 하고 있지만 오히려 개발 관련이 아닌 글을 더 쓰고 싶어합니다. 주로 그때그때 관심이 있는 주제로 포스트를 작성합니다.
