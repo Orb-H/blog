@@ -7,6 +7,8 @@ description: >
 
 show_excerpts: true # set to true to show excerpts on the homepage
 
+google_analytics: G-WT50T6N5LV
+
 # Minima date format
 # refer to https://shopify.github.io/liquid/filters/date/ if you want to customize this
 minima:
