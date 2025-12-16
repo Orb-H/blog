@@ -238,25 +238,25 @@ TrueSkill은 플레이어가 처음 가질 레이팅 값, 최대로 늘어날 �
 </thead>
 <tbody>
 <tr><td>1</td><td class="tier4">남궁혁</td><td><code>63.04 (+10.37)</code></td><td><code>80.94 (+5.29)</code></td><td class="tier4">4</td><td><code>1.275</code></td></tr>
-<tr><td>2</td><td class="tier4">박인수</td><td><code>55.44 (-)</code></td><td><code>74.85 (-)</code></td><td class="tier4">4</td><td><code>1.700</code></td></tr>
-<tr><td>3</td><td class="tier4">형독</td><td><code>55.00 (+0.04)</code></td><td><code>70.92 (-6.80)</code></td><td class="tier4">4</td><td><code>2.050</code></td></tr>
+<tr><td>2</td><td class="tier4">박인수</td><td><code>55.90 (-)</code></td><td><code>75.39 (-)</code></td><td class="tier4">4</td><td><code>1.700</code></td></tr>
+<tr><td>3</td><td class="tier4">형독</td><td><code>55.29 (+0.33)</code></td><td><code>71.25 (-6.47)</code></td><td class="tier4">4</td><td><code>2.050</code></td></tr>
 <tr><td>4</td><td class="tier4">제황</td><td><code>51.96 (-)</code></td><td><code>71.45 (-)</code></td><td class="tier4">4</td><td><code>2.000</code></td></tr>
 <tr><td>5</td><td class="tier4">강지형</td><td><code>49.20 (+7.82)</code></td><td><code>63.86 (+3.03)</code></td><td class="tier4">4</td><td><code>2.958</code></td></tr>
-<tr><td>6</td><td class="tier3">요나</td><td><code>47.90 (+5.61)</code></td><td><code>62.17 (+0.09)</code></td><td class="tier3">3</td><td><code>3.121</code></td></tr>
-<tr><td>7</td><td class="tier3">문호준</td><td><code>46.90 (-)</code></td><td><code>62.83 (-)</code></td><td class="tier3">3</td><td><code>3.500</code></td></tr>
-<tr><td>8</td><td class="tier3">김레오</td><td><code>42.32 (+4.53)</code></td><td><code>54.95 (-1.98)</code></td><td class="tier3">3</td><td><code>4.896</code></td></tr>
+<tr><td>6</td><td class="tier3">요나</td><td><code>47.60 (+5.31)</code></td><td><code>61.90 (-0.18)</code></td><td class="tier3">3</td><td><code>3.121</code></td></tr>
+<tr><td>7</td><td class="tier3">문호준</td><td><code>46.52 (-)</code></td><td><code>62.50 (-)</code></td><td class="tier3">3</td><td><code>3.500</code></td></tr>
+<tr><td>8</td><td class="tier3">김레오</td><td><code>42.08 (+4.29)</code></td><td><code>54.74 (-2.19)</code></td><td class="tier3">3</td><td><code>4.896</code></td></tr>
 <tr><td>9</td><td class="tier3">노돌리</td><td><code>40.75 (-)</code></td><td><code>57.05 (-)</code></td><td class="tier3">3</td><td><code>4.250</code></td></tr>
-<tr><td>10</td><td class="tier3">박지</td><td><code>31.39 (-)</code></td><td><code>46.57 (-)</code></td><td class="tier3">3</td><td><code>5.850</code></td></tr>
+<tr><td>10</td><td class="tier3">박지</td><td><code>31.66 (-)</code></td><td><code>46.87 (-)</code></td><td class="tier3">3</td><td><code>5.850</code></td></tr>
 <tr><td>11</td><td class="tier3">뽀구미</td><td><code>31.10 (-)</code></td><td><code>46.61 (-)</code></td><td class="tier3">3</td><td><code>5.200</code></td></tr>
 <tr><td>12</td><td class="tier2">김토키</td><td><code>30.94 (-)</code></td><td><code>46.27 (-)</code></td><td class="tier2">2</td><td><code>6.300</code></td></tr>
 <tr><td>13</td><td class="tier2">늦잠</td><td><code>29.15 (-)</code></td><td><code>47.98 (-)</code></td><td class="tier2">2</td><td><code>5.833</code></td></tr>
 <tr><td>14</td><td class="tier2">오단밍</td><td><code>26.83 (+20.70)</code></td><td><code>39.63 (+12.08)</code></td><td class="tier2">2</td><td><code>7.796</code></td></tr>
-<tr><td>15</td><td class="tier2">헤라</td><td><code>26.21 (+3.81)</code></td><td><code>38.55 (-2.73)</code></td><td class="tier2">2</td><td><code>7.354</code></td></tr>
+<tr><td>15</td><td class="tier2">헤라</td><td><code>25.98 (+3.58)</code></td><td><code>38.34 (-2.94)</code></td><td class="tier2">2</td><td><code>7.354</code></td></tr>
 <tr><td>16</td><td class="tier1">쵸쵸우</td><td><code>25.81 (+0.01)</code></td><td><code>38.35 (-6.41)</code></td><td class="tier1">1</td><td><code>7.321</code></td></tr>
-<tr><td>17</td><td class="tier2">서애덕</td><td><code>25.41 (+9.08)</code></td><td><code>38.03 (+1.84)</code></td><td class="tier2">2</td><td><code>7.721</code></td></tr>
-<tr><td>18</td><td class="tier1">양메이</td><td><code>21.78 (-2.35)</code></td><td><code>34.41 (-8.48)</code></td><td class="tier1">1</td><td><code>8.021</code></td></tr>
+<tr><td>17</td><td class="tier2">서애덕</td><td><code>25.61 (+9.28)</code></td><td><code>38.25 (+2.06)</code></td><td class="tier2">2</td><td><code>7.721</code></td></tr>
+<tr><td>18</td><td class="tier1">양메이</td><td><code>21.97 (-2.16)</code></td><td><code>34.61 (-8.28)</code></td><td class="tier1">1</td><td><code>8.021</code></td></tr>
 <tr><td>19</td><td class="tier2">햄쿠비</td><td><code>18.67 (+9.62)</code></td><td><code>31.77 (+1.83)</code></td><td class="tier2">2</td><td><code>8.521</code></td></tr>
-<tr><td>20</td><td class="tier1">케인</td><td><code>8.82 (-)</code></td><td><code>27.36 (-)</code></td><td class="tier1">1</td><td><code>8.950</code></td></tr>
+<tr><td>20</td><td class="tier1">케인</td><td><code>8.30 (-)</code></td><td><code>26.92 (-)</code></td><td class="tier1">1</td><td><code>8.950</code></td></tr>
 <tr><td>21</td><td class="tier1">이글콥</td><td><code>4.08 (-)</code></td><td><code>22.87 (-)</code></td><td class="tier1">1</td><td><code>9.350</code></td></tr>
 </tbody>
 </table></p>
@@ -307,42 +307,42 @@ TrueSkill은 플레이어가 처음 가질 레이팅 값, 최대로 늘어날 �
 <tr><th>순위</th><th>이름</th><th>레이팅</th><th>평균</th><th> 티어</th><th>랭킹 지수</th></tr>
 </thead>
 <tbody>
-<tr><td>1</td><td class="tier6">형독</td><td><code>59.94 (+4.94)</code></td><td><code>74.18 (+3.26)</code></td><td class="tier6">6</td><td><code>1.511</code></td></tr>
-<tr><td>2</td><td class="tier6">남궁혁</td><td><code>57.52 (-5.52)</code></td><td><code>72.95 (-7.99)</code></td><td class="tier6">6</td><td><code>1.661</code></td></tr>
-<tr><td>3</td><td class="tier6">박인수</td><td><code>55.44 (-)</code></td><td><code>74.85 (-)</code></td><td class="tier6">6</td><td><code>1.700</code></td></tr>
-<tr><td>4</td><td class="tier5">제황</td><td><code>52.83 (+0.87)</code></td><td><code>68.55 (-2.90)</code></td><td class="tier5">5</td><td><code>1.850</code></td></tr>
-<tr><td>5</td><td class="tier5">요나</td><td><code>51.52 (+3.62)</code></td><td><code>64.07 (+1.90)</code></td><td class="tier5">5</td><td><code>2.447</code></td></tr>
-<tr><td>6</td><td class="tier5">강지형</td><td><code>51.16 (+1.96)</code></td><td><code>63.91 (+0.05)</code></td><td class="tier5">5</td><td><code>2.517</code></td></tr>
-<tr><td>7</td><td class="tier4">문호준</td><td><code>46.90 (-)</code></td><td><code>62.83 (-)</code></td><td class="tier4">4</td><td><code>3.500</code></td></tr>
-<tr><td>8</td><td class="tier5">김레오</td><td><code>44.75 (+2.43)</code></td><td><code>56.15 (+1.20)</code></td><td class="tier5">5</td><td><code>3.975</code></td></tr>
-<tr><td>9</td><td class="tier4_">유영혁</td><td><code>40.89 (-)</code></td><td><code>64.31 (-)</code></td><td class="tier4_">4+</td><td><code>1.367</code></td></tr>
+<tr><td>1</td><td class="tier6">형독</td><td><code>60.15 (+4.86)</code></td><td><code>74.44 (+3.19)</code></td><td class="tier6">6</td><td><code>1.511</code></td></tr>
+<tr><td>2</td><td class="tier6">남궁혁</td><td><code>57.51 (-5.53)</code></td><td><code>72.94 (-8.00)</code></td><td class="tier6">6</td><td><code>1.661</code></td></tr>
+<tr><td>3</td><td class="tier6">박인수</td><td><code>55.90 (-)</code></td><td><code>75.39 (-)</code></td><td class="tier6">6</td><td><code>1.700</code></td></tr>
+<tr><td>4</td><td class="tier5">제황</td><td><code>52.81 (+0.85)</code></td><td><code>68.53 (-2.92)</code></td><td class="tier5">5</td><td><code>1.850</code></td></tr>
+<tr><td>5</td><td class="tier5">요나</td><td><code>51.29 (+3.69)</code></td><td><code>63.87 (+1.97)</code></td><td class="tier5">5</td><td><code>2.447</code></td></tr>
+<tr><td>6</td><td class="tier5">강지형</td><td><code>51.15 (+1.95)</code></td><td><code>63.91 (+0.05)</code></td><td class="tier5">5</td><td><code>2.517</code></td></tr>
+<tr><td>7</td><td class="tier4">문호준</td><td><code>46.52 (-)</code></td><td><code>62.50 (-)</code></td><td class="tier4">4</td><td><code>3.500</code></td></tr>
+<tr><td>8</td><td class="tier5">김레오</td><td><code>44.56 (+2.48)</code></td><td><code>55.97 (+1.23)</code></td><td class="tier5">5</td><td><code>3.975</code></td></tr>
+<tr><td>9</td><td class="tier4_">유영혁</td><td><code>40.84 (-)</code></td><td><code>64.27 (-)</code></td><td class="tier4_">4+</td><td><code>1.367</code></td></tr>
 <tr><td>10</td><td class="tier4">노돌리</td><td><code>40.75 (-)</code></td><td><code>57.05 (-)</code></td><td class="tier4">4</td><td><code>4.250</code></td></tr>
-<tr><td>11</td><td class="tier4_">사모장</td><td><code>38.31 (-)</code></td><td><code>60.93 (-)</code></td><td class="tier4_">4+</td><td><code>1.767</code></td></tr>
-<tr><td>12</td><td class="tier4">김토키</td><td><code>34.24 (+3.30)</code></td><td><code>47.44 (+1.17)</code></td><td class="tier4">4</td><td><code>5.217</code></td></tr>
-<tr><td>13</td><td class="tier3_">오단밍</td><td><code>31.62 (+4.79)</code></td><td><code>43.24 (+3.61)</code></td><td class="tier3_">3+</td><td><code>6.453</code></td></tr>
-<tr><td>14</td><td class="tier4">박지</td><td><code>31.39 (-)</code></td><td><code>46.57 (-)</code></td><td class="tier4">4</td><td><code>5.850</code></td></tr>
-<tr><td>15</td><td class="tier3_">늦잠</td><td><code>30.86 (+1.71)</code></td><td><code>45.91 (-2.07)</code></td><td class="tier3_">3+</td><td><code>6.717</code></td></tr>
-<tr><td>16</td><td class="tier4">뽀구미</td><td><code>30.28 (-0.82)</code></td><td><code>43.58 (-3.03)</code></td><td class="tier4">4</td><td><code>5.567</code></td></tr>
-<tr><td>17</td><td class="tier4_">백마력티비</td><td><code>29.88 (-)</code></td><td><code>52.71 (-)</code></td><td class="tier4_">4+</td><td><code>2.667</code></td></tr>
-<tr><td>18</td><td class="tier4">헤라</td><td><code>29.48 (+3.27)</code></td><td><code>40.67 (+2.12)</code></td><td class="tier4">4</td><td><code>5.936</code></td></tr>
-<tr><td>19</td><td class="tier4">해마티엘</td><td><code>26.95 (-)</code></td><td><code>50.00 (-)</code></td><td class="tier4">4</td><td><code>4.700</code></td></tr>
-<tr><td>20</td><td class="tier3">서애덕</td><td><code>26.61 (+1.20)</code></td><td><code>37.93 (-0.10)</code></td><td class="tier3">3</td><td><code>7.147</code></td></tr>
-<tr><td>21</td><td class="tier2">쵸쵸우</td><td><code>25.27 (-0.54)</code></td><td><code>36.71 (-1.64)</code></td><td class="tier2">2</td><td><code>7.003</code></td></tr>
-<tr><td>22</td><td class="tier3">양메이</td><td><code>25.06 (+3.28)</code></td><td><code>36.36 (+1.95)</code></td><td class="tier3">3</td><td><code>7.025</code></td></tr>
-<tr><td>23</td><td class="tier3">하루토</td><td><code>23.17 (-)</code></td><td><code>45.64 (-)</code></td><td class="tier3">3</td><td><code>4.867</code></td></tr>
-<tr><td>24</td><td class="tier2">로션욤</td><td><code>21.15 (-)</code></td><td><code>41.75 (-)</code></td><td class="tier2">2</td><td><code>7.567</code></td></tr>
-<tr><td>25</td><td class="tier2">최케빈</td><td><code>21.05 (-)</code></td><td><code>43.55 (-)</code></td><td class="tier2">2</td><td><code>5.500</code></td></tr>
-<tr><td>26</td><td class="tier3">햄쿠비</td><td><code>18.67 (-)</code></td><td><code>31.77 (-)</code></td><td class="tier3">3</td><td><code>8.521</code></td></tr>
-<tr><td>27</td><td class="tier3">새싹감자</td><td><code>18.64 (-)</code></td><td><code>41.13 (-)</code></td><td class="tier3">3</td><td><code>5.367</code></td></tr>
-<tr><td>28</td><td class="tier1_">유리리</td><td><code>18.45 (-)</code></td><td><code>39.03 (-)</code></td><td class="tier1_">1+</td><td><code>8.233</code></td></tr>
-<tr><td>29</td><td class="tier1_">새담</td><td><code>17.17 (-)</code></td><td><code>37.71 (-)</code></td><td class="tier1_">1+</td><td><code>7.700</code></td></tr>
-<tr><td>30</td><td class="tier2">이글콥</td><td><code>16.83 (+12.75)</code></td><td><code>31.69 (+8.82)</code></td><td class="tier2">2</td><td><code>8.642</code></td></tr>
-<tr><td>31</td><td class="tier1_">미치르 메르헨</td><td><code>10.54 (-)</code></td><td><code>31.54 (-)</code></td><td class="tier1_">1+</td><td><code>8.600</code></td></tr>
+<tr><td>11</td><td class="tier4_">사모장</td><td><code>38.28 (-)</code></td><td><code>60.90 (-)</code></td><td class="tier4_">4+</td><td><code>1.767</code></td></tr>
+<tr><td>12</td><td class="tier4">김토키</td><td><code>34.25 (+3.31)</code></td><td><code>47.45 (+1.18)</code></td><td class="tier4">4</td><td><code>5.217</code></td></tr>
+<tr><td>13</td><td class="tier4">박지</td><td><code>31.66 (-)</code></td><td><code>46.87 (-)</code></td><td class="tier4">4</td><td><code>5.850</code></td></tr>
+<tr><td>14</td><td class="tier3_">오단밍</td><td><code>31.63 (+4.80)</code></td><td><code>43.25 (+3.62)</code></td><td class="tier3_">3+</td><td><code>6.453</code></td></tr>
+<tr><td>15</td><td class="tier3_">늦잠</td><td><code>30.86 (+1.71)</code></td><td><code>45.92 (-2.06)</code></td><td class="tier3_">3+</td><td><code>6.717</code></td></tr>
+<tr><td>16</td><td class="tier4">뽀구미</td><td><code>30.30 (-0.80)</code></td><td><code>43.60 (-3.01)</code></td><td class="tier4">4</td><td><code>5.567</code></td></tr>
+<tr><td>17</td><td class="tier4_">백마력티비</td><td><code>29.82 (-)</code></td><td><code>52.65 (-)</code></td><td class="tier4_">4+</td><td><code>2.667</code></td></tr>
+<tr><td>18</td><td class="tier4">헤라</td><td><code>29.30 (+3.32)</code></td><td><code>40.50 (+2.16)</code></td><td class="tier4">4</td><td><code>5.936</code></td></tr>
+<tr><td>19</td><td class="tier4">해마티엘</td><td><code>26.98 (-)</code></td><td><code>50.03 (-)</code></td><td class="tier4">4</td><td><code>4.700</code></td></tr>
+<tr><td>20</td><td class="tier3">서애덕</td><td><code>26.78 (+1.17)</code></td><td><code>38.11 (-0.14)</code></td><td class="tier3">3</td><td><code>7.147</code></td></tr>
+<tr><td>21</td><td class="tier2">쵸쵸우</td><td><code>25.28 (-0.53)</code></td><td><code>36.72 (-1.63)</code></td><td class="tier2">2</td><td><code>7.003</code></td></tr>
+<tr><td>22</td><td class="tier3">양메이</td><td><code>25.22 (+3.25)</code></td><td><code>36.54 (+1.93)</code></td><td class="tier3">3</td><td><code>7.025</code></td></tr>
+<tr><td>23</td><td class="tier3">하루토</td><td><code>23.21 (-)</code></td><td><code>45.68 (-)</code></td><td class="tier3">3</td><td><code>4.867</code></td></tr>
+<tr><td>24</td><td class="tier2">로션욤</td><td><code>21.15 (-)</code></td><td><code>41.76 (-)</code></td><td class="tier2">2</td><td><code>7.567</code></td></tr>
+<tr><td>25</td><td class="tier2">최케빈</td><td><code>21.09 (-)</code></td><td><code>43.60 (-)</code></td><td class="tier2">2</td><td><code>5.500</code></td></tr>
+<tr><td>26</td><td class="tier3">새싹감자</td><td><code>18.69 (-)</code></td><td><code>41.18 (-)</code></td><td class="tier3">3</td><td><code>5.367</code></td></tr>
+<tr><td>27</td><td class="tier3">햄쿠비</td><td><code>18.67 (-)</code></td><td><code>31.77 (-)</code></td><td class="tier3">3</td><td><code>8.521</code></td></tr>
+<tr><td>28</td><td class="tier1_">유리리</td><td><code>18.46 (-)</code></td><td><code>39.04 (-)</code></td><td class="tier1_">1+</td><td><code>8.233</code></td></tr>
+<tr><td>29</td><td class="tier1_">새담</td><td><code>17.18 (-)</code></td><td><code>37.72 (-)</code></td><td class="tier1_">1+</td><td><code>7.700</code></td></tr>
+<tr><td>30</td><td class="tier2">이글콥</td><td><code>16.84 (+12.76)</code></td><td><code>31.69 (+8.82)</code></td><td class="tier2">2</td><td><code>8.642</code></td></tr>
+<tr><td>31</td><td class="tier1_">미치르 메르헨</td><td><code>10.55 (-)</code></td><td><code>31.55 (-)</code></td><td class="tier1_">1+</td><td><code>8.600</code></td></tr>
 <tr><td>32</td><td class="tier1_">이치카 히비</td><td><code>9.34 (-)</code></td><td><code>30.64 (-)</code></td><td class="tier1_">1+</td><td><code>8.667</code></td></tr>
 <tr><td>33</td><td class="tier1">케인</td><td><code>8.82 (-)</code></td><td><code>27.36 (-)</code></td><td class="tier1">1</td><td><code>8.950</code></td></tr>
-<tr><td>34</td><td class="tier1">아로</td><td><code>8.05 (-)</code></td><td><code>29.50 (-)</code></td><td class="tier1">1</td><td><code>9.433</code></td></tr>
-<tr><td>35</td><td class="tier1">하쁘</td><td><code>4.78 (-)</code></td><td><code>26.69 (-)</code></td><td class="tier1">1</td><td><code>9.500</code></td></tr>
-<tr><td>36</td><td class="tier1">레아나</td><td><code>-2.69 (-)</code></td><td><code>21.47 (-)</code></td><td class="tier1">1</td><td><code>9.767</code></td></tr>
+<tr><td>34</td><td class="tier1">아로</td><td><code>8.06 (-)</code></td><td><code>29.51 (-)</code></td><td class="tier1">1</td><td><code>9.433</code></td></tr>
+<tr><td>35</td><td class="tier1">하쁘</td><td><code>4.79 (-)</code></td><td><code>26.70 (-)</code></td><td class="tier1">1</td><td><code>9.500</code></td></tr>
+<tr><td>36</td><td class="tier1">레아나</td><td><code>-2.68 (-)</code></td><td><code>21.48 (-)</code></td><td class="tier1">1</td><td><code>9.767</code></td></tr>
 </tbody>
 </table></p>
 </details></p>
@@ -394,7 +394,7 @@ TrueSkill은 플레이어가 처음 가질 레이팅 값, 최대로 늘어날 �
 <tr><td></td><td>12</td><td class="tier2">김토키</td><td><code>30.94 (-)</code></td><td><code>46.27 (-)</code></td><td class="tier2">2</td><td><code>6.300</code></td></tr>
 <tr><td>→</td><td>13</td><td class="tier2">늦잠</td><td><code>29.15 (-)</code></td><td><code>47.98 (-)</code></td><td class="tier2">2</td><td><code>5.833</code></td></tr>
 <tr><td>→</td><td>14</td><td class="tier2">오단밍</td><td><code>26.83 (+20.70)</code></td><td><code>39.63 (+12.08)</code></td><td class="tier2">2</td><td><code>7.796</code></td></tr>
-<tr><td></td><td>15</td><td class="tier2">헤라</td><td><code>26.21 (+3.81)</code></td><td><code>38.55 (-2.73)</code></td><td class="tier2">2</td><td><code>7.354</code></td></tr>
+<tr><td></td><td>15</td><td class="tier2">헤라</td><td><code>25.98 (+3.58)</code></td><td><code>38.34 (-2.94)</code></td><td class="tier2">2</td><td><code>7.354</code></td></tr>
 <tr><td></td><td>16</td><td class="tier1">쵸쵸우</td><td><code>25.81 (+0.01)</code></td><td><code>38.35 (-6.41)</code></td><td class="tier1">1</td><td><code>7.321</code></td></tr>
 </tbody>
 </table></p>
