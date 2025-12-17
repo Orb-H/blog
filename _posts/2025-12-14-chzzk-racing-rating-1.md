@@ -189,13 +189,13 @@ TrueSkill은 플레이어가 처음 가질 레이팅 값, 최대로 늘어날 �
 </table></p>
 </details></p>
 
-대회 진행 후 결정된 티어를 반영한 그래프는 아래와 같다. 선명한 점이 레이팅, 흐릿한 점이 평균이다. (우클릭 - 이미지 새 탭에서 열기로 크게 볼 수 있다.)
+대회 진행 후 결정된 티어를 반영한 그래프는 아래와 같다. 선명한 점이 레이팅, 흐릿한 점이 평균이다. (이미지를 클릭하면 크게 볼 수 있다.)
 
-![치레동 1회 순위와 레이팅](/images/chzzk-racing-rating/bw1.png)
+[![치레동 1회 순위와 레이팅](/images/chzzk-racing-rating/bw1.png)](/images/chzzk-racing-rating/bw1.png)
 
 또한 이후 결정된 랭킹 지수와 비교한 레이팅은 아래와 같다.
 
-![치레동 1회 랭킹 지수와 레이팅](/images/chzzk-racing-rating/bw1t.png)
+[![치레동 1회 랭킹 지수와 레이팅](/images/chzzk-racing-rating/bw1t.png)](/images/chzzk-racing-rating/bw1t.png)
 
 ##### 데이터 관찰
 
@@ -262,17 +262,16 @@ TrueSkill은 플레이어가 처음 가질 레이팅 값, 최대로 늘어날 �
 </table></p>
 </details></p>
 
-대회 진행 후 1회 대회의 티어를 반영한 그래프는 아래와 같다. 선명한 점이 레이팅, 흐릿한 점이 평균이다. (우클릭 - 이미지 새 탭에서 열기로 크게 볼 수 있다.)
+대회 진행 후 1회 대회의 티어를 반영한 그래프는 아래와 같다. 선명한 점이 레이팅, 흐릿한 점이 평균이다. (이미지를 클릭하면 크게 볼 수 있다.)
 
-![치레동 2회 순위와 레이팅 (1회 티어 기준)](/images/chzzk-racing-rating/bw1-2.png)
+[![치레동 2회 순위와 레이팅 (1회 티어 기준)](/images/chzzk-racing-rating/bw1-2.png)](/images/chzzk-racing-rating/bw1-2.png)
 
 대회 진행 후 결정된 티어를 반영한 그래프는 아래와 같다. 마찬가지로 선명한 점이 레이팅, 흐릿한 점이 평균이다.
 
-![치레동 2회 순위와 레이팅](/images/chzzk-racing-rating/bw2.png)
-
+[![치레동 2회 순위와 레이팅](/images/chzzk-racing-rating/bw2.png)](/images/chzzk-racing-rating/bw2.png)
 또한 이후 결정된 랭킹 지수와 비교한 레이팅은 아래와 같다. (슬슬 인원이 많아져서 그래프에 이름을 넣기가 힘들다. 글자가 일부 겹치거나 위치가 이상한 부분은 양해바란다.)
 
-![치레동 2회 랭킹 지수와 레이팅](/images/chzzk-racing-rating/bw2t.png)
+[![치레동 2회 랭킹 지수와 레이팅](/images/chzzk-racing-rating/bw2t.png)](/images/chzzk-racing-rating/bw2t.png)
 
 ##### 데이터 관찰
 
@@ -347,20 +346,20 @@ TrueSkill은 플레이어가 처음 가질 레이팅 값, 최대로 늘어날 �
 </table></p>
 </details></p>
 
-대회 진행 후 2회 대회의 티어를 반영한 그래프는 아래와 같다. 선명한 점이 레이팅, 흐릿한 점이 평균이다. (우클릭 - 이미지 새 탭에서 열기로 크게 볼 수 있다.)
+대회 진행 후 2회 대회의 티어를 반영한 그래프는 아래와 같다. 선명한 점이 레이팅, 흐릿한 점이 평균이다. (이미지를 클릭하면 크게 볼 수 있다.)
 
-![치레동 3회 순위와 레이팅 (2회 티어 기준)](/images/chzzk-racing-rating/bw2-3.png)
+[![치레동 3회 순위와 레이팅 (2회 티어 기준)](/images/chzzk-racing-rating/bw2-3.png)](/images/chzzk-racing-rating/bw2-3.png)
 
 대회 진행 후 결정된 티어를 반영한 그래프는 아래와 같다. 마찬가지로 선명한 점이 레이팅, 흐릿한 점이 평균이다.
 
-![치레동 3회 순위와 레이팅](/images/chzzk-racing-rating/bw3.png)
+[![치레동 3회 순위와 레이팅](/images/chzzk-racing-rating/bw3.png)](/images/chzzk-racing-rating/bw3.png)
 
 3회에서는 랭킹 지수와 티어 지수를 공식적으로 집계하지 않았기 때문에 랭킹 지수와 레이팅의 비교 그래프는 숨겨놓겠다. 더군다나 사람이 많아서 그래프 안의 텍스트도 많이 겹쳐서 잘 보이지 않는다. 그래도 궁금하다면 아래 버튼을 눌러 확인할 수 있다.
 
 <p><details>
 <summary><u>치레동 3회 랭킹 지수와 레이팅</u></summary>
 <p>
-<img src="/images/chzzk-racing-rating/bw3t.png" alt="치레동 3회 랭킹 지수와 레이팅">
+<a href="/images/chzzk-racing-rating/bw3t.png"><img src="/images/chzzk-racing-rating/bw3t.png" alt="치레동 3회 랭킹 지수와 레이팅"></a>
 
 마찬가지로 나무위키에 작성되어있던 랭킹 지수를 참고하여 그래프를 그렸다.
 
