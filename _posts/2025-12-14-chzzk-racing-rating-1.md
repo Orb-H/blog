@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "치레동 레이팅 설계해보기 (일반인용)"
+title: "치레동 레이팅 설계해보기 (일반)"
 latex_needed: true
 comment: true
 
