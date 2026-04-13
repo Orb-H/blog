@@ -63,7 +63,7 @@ modified_date:
 
 > 주의: 작성자는 아직 아래 내용을 충분히 이해하지 못한 상태에서 작성한 글입니다. 혹시라도 이 글에 대해 잘 아시는 분이 있다면 조언 부탁드립니다.
 
-이 포스트는 [이전 포스트](/chzzk-racing-rating-1)에서 설명하지 못한 수학적인 내용을 다룬다. 혹시라도 수식에 알러지가 있는 분들은 이전 포스트로 이동해주시길 바란다. 또한 이 포스트의 구성은 해당 포스트와 비슷하나 이전 포스트에서 언급한 내용은 건너뛸 확률이 높으니 이전 포스트를 머저 읽고나서 이 포스트를 읽는 것을 추천한다.
+이 포스트는 [이전 포스트](/chzzk-racing-rating-1)에서 설명하지 못한 수학적인 내용을 다룬다. 혹시라도 수식에 알러지가 있는 분들은 이전 포스트로 이동해주시길 바란다. 또한 이 포스트의 구성은 해당 포스트와 비슷하나 이전 포스트에서 언급한 내용은 건너뛸 확률이 높으니 이전 포스트를 먼저 읽고나서 이 포스트를 읽는 것을 추천한다.
 
 ### 티어 지수와 랭킹 지수, 티어의 문제점
 
@@ -79,6 +79,7 @@ modified_date:
 
 <p><details>
 <summary><u>랭킹 지수의 (사소한) 수학적 결함</u></summary>
+
 티어 지수와 랭킹 지수의 정의를 다시 살펴보자.
 
 $$
@@ -117,13 +118,13 @@ $$
 
 ![TrueSkill에서의 Factor Graph](/images/chzzk-racing-rating/factor-graph.png)
 
-위 그래프에 대해 설명하자면, 먼저 플레이어의 실력 $s_i=\mathcal{N}(\mu_i,\sigma_i^2)$에 대해서 해당 경기에서의 플레이어의 퍼포먼스 $p_i\sim\mathcal{N}(s_i,\beta)$가 정해진다. 여기서 $\beta$는 시스템에서 임의로 정하는 퍼포먼스의 불확실도이다. 이를 기반으로 팀 전체의 퍼포먼스를 결정하는데, 이 때에는 단순히 팀원의 퍼포먼스를 더한다. 즉, $t_A=\sum_{i\in A} p_i$이다. 이제 마지막으로 팀 간의 대결 결과를 결정하는데, 이 때에는 각 팀의 퍼포먼스에 대한 차이를 구해서 $d=t_A-t_B$로 나타낸다. 만약 $d>\epsilon$이라면 팀 A가 이기고, $d<-\epsilon$이라면 팀 B가 이기는 것으로 예측한다. 그리고 $\left\|d\right\|<\epsilon$이라면 비기는 것으로 예측한다.
+위 그래프에 대해 설명하자면, 먼저 플레이어의 실력 $s_i\sim\mathcal{N}(\mu_i,\sigma_i^2)$에 대해서 해당 경기에서의 플레이어의 퍼포먼스 $p_i\sim\mathcal{N}(s_i,\beta)$가 정해진다. 여기서 $\beta$는 시스템에서 임의로 정하는 퍼포먼스의 불확실도이다. 이를 기반으로 팀 전체의 퍼포먼스를 결정하는데, 이 때에는 단순히 팀원의 퍼포먼스를 더한다. 즉, $t_A=\sum_{i\in A} p_i$이다. 이제 마지막으로 팀 간의 대결 결과를 결정하는데, 이 때에는 각 팀의 퍼포먼스에 대한 차이를 구해서 $d=t_A-t_B$로 나타낸다. 만약 $d>\epsilon$이라면 팀 A가 이기고, $d<-\epsilon$이라면 팀 B가 이기는 것으로 예측한다. 그리고 $\left\|d\right\|<\epsilon$이라면 비기는 것으로 예측한다.
 
 이제 위의 세 경우에 대한 예측 확률 $P(d>\epsilon)$, $P(d<-\epsilon)$, $P(\left\|d\right\|<\epsilon)$과 실제 경기 결과를 바탕으로 다시 플레이어의 레이팅을 업데이트한다. 위의 순서와는 역순으로 변수를 업데이트해가면서 결과적으로는 각 선수의 실력에서의 $\mu_i$와 $\sigma_i$가 업데이트되는 것이다. 정확히 어떤 값으로 보정되는지는 논문이나 웹페이지를 참고하길 바란다.
 
 #### 대표값과 레이팅
 
-TrueSkill에는 대표값을 따로 정의하기도 한다. 이 값은 주어진 플레이어의 실력 $s=\mathcal{N}(\mu, \sigma^2)$에 대해서 주로 $\mu-3\sigma$로 사용한다. 즉, 평균에서 표준편차의 3배를 뺀 값을 사용하는 것이다. 수식으로 표현해보자면 $P(s>\mu-3\sigma)\approx0.9987$이므로, 이 값을 레이팅으로 사용한다면 **플레이어의 실력이 레이팅 값보다 높을 확률이 약 99.87%**가 된다. 따라서 이 값을 레이팅으로 사용하는 것은 플레이어의 실력에 대한 보수적인 추정값을 대표값으로 사용하겠다는 의미이기도 하다. 아래의 그래프를 참조하면 더 이해하기 쉬울 것이다.
+TrueSkill에는 대표값을 따로 정의하기도 한다. 이 값은 주어진 플레이어의 실력 $s\sim\mathcal{N}(\mu, \sigma^2)$에 대해서 주로 $\mu-3\sigma$로 사용한다. 즉, 평균에서 표준편차의 3배를 뺀 값을 사용하는 것이다. 수식으로 표현해보자면 $P(s>\mu-3\sigma)\approx0.9987$이므로, 이 값을 레이팅으로 사용한다면 **플레이어의 실력이 레이팅 값보다 높을 확률이 약 99.87%**가 된다. 따라서 이 값을 레이팅으로 사용하는 것은 플레이어의 실력에 대한 보수적인 추정값을 대표값으로 사용하겠다는 의미이기도 하다. 아래의 그래프를 참조하면 더 이해하기 쉬울 것이다.
 
 ![μ±3σ 범위의 신뢰구간](/images/chzzk-racing-rating/mu-3sigma.png)
 
@@ -155,7 +156,7 @@ TrueSkill에서 추천하는 것은 $\mu_0$, $\sigma_0$, $\beta$, $\tau$의 비�
 
 #### 정확도 기반 정규분포 합성
 
-보통 두 개의 정규분포를 합성한다고 하면, 아래와 같은 방법을 사용한다.
+먼저 두 개의 정규분포를 합성하는 방법에 대해 알아보겠다. 보통 두 개의 정규분포를 합성한다고 하면, 아래와 같은 방법을 사용한다.
 
 $$
 \begin{aligned}
@@ -165,88 +166,120 @@ Z&\sim\mathcal{N}(\mu_X+\mu_Y, \sigma_X^2+\sigma_Y^2)
 \end{aligned}
 $$
 
-하지만 위는 단순히 두 정규분포를 더한 값으로, 그저 두 분포를 더했을 때 나오는 분포를 정규분포로 근사한 결과이다. 하지만 레이팅에서 다루는 정규분포는 조금 다르게 작동한다. 먼저 아래의 베이즈 정리를 보자.
+위를 글로 설명하자면, 어떤 두 양(quantity)에 대한 분포가 있을 때 그 합을 나타내는 분포를 예측하는 과정이다. [^4] 하지만 여기서 하려고 하는 정규분포의 합성은 방향성이 조금 다르다. 같은 목표 변수에 대한 서로 다른 두 관측값을 기반으로 해당 변수의 더 정확한 분포를 예측하는 것이다. 그림으로 설명하자면 아래와 같다.
+
+![정확도 기반 정규분포 합성](/images/chzzk-racing-rating/precision-blending.png)
+
+합성하려는 두 정규분포는 점선으로 된 두 그래프이다. 하나는 평균 -1, 표준편차 1의 정규분포를 가지고 나머지 하나는 평균 2, 표준편차 1.5의 정규분포를 가졌다. 이 때 단순히 두 분포의 합에 대한 분포를 나타낸 것은 초록색 그래프, 그리고 우리가 원하는 **두 관측값으로부터 추론한 더 정확한 분포**로서 찾고자 하는 분포는 보라색이다. 조금 더 높은 정확도로 평균이 -1임을 관측했고 그보다는 낮은 정확도로 평균이 2임을 관측했다면, 아무래도 합성한 분포의 평균은 정확도가 더 높은 -1쪽에 가깝게 위치하는 것이 의미상 더 적절해보인다.
+
+수식으로 표현하자면, 관측하려는 변수 $X$에 대한 관측값 $A$와 $B$가 있을 때, $P(X)$는 아래와 같은 식처럼 추정할 수 있다.
+
+$$
+P(X)\propto P(A)P(B)\\
+$$
+
+이제 위 식을 확률밀도함수로 다시 써보겠다.
+
+$$
+\begin{aligned}
+f_{X}(x)&\propto f_A(x)\cdot f_B(x)\\
+&=\frac{1}{\sqrt{2\pi\sigma_A^2}}\exp\left(-\frac{(x-\mu_A)^2}{2\sigma_A^2}\right)\cdot\frac{1}{\sqrt{2\pi\sigma_B^2}}\exp\left(-\frac{(x-\mu_B)^2}{2\sigma_B^2}\right)\\
+&=\frac{1}{\sqrt{2\pi\sigma_A^2}\sqrt{2\pi\sigma_B^2}}\exp\left(-\frac{1}{2}\left(\frac{(x-\mu_A)^2}{\sigma_A^2}+\frac{(x-\mu_B)^2}{\sigma_B^2}\right)\right)\\
+&\propto\exp\left(-\frac{1}{2}\left(\frac{(x-\mu_A)^2}{\sigma_A^2}+\frac{(x-\mu_B)^2}{\sigma_B^2}\right)\right)
+\end{aligned}
+$$
+
+여기서 $\tau$, 또는 정확도(precision)라는 것을 분산의 역수로 정의하겠다. 즉, $\tau_A=\frac{1}{\sigma_A^2}$, $\tau_B=\frac{1}{\sigma_B^2}$이다. 그러면 위 식은 아래와 같이 표현할 수 있다.
+
+$$
+\begin{aligned}
+f_{X}(x)&\propto\exp\left(-\frac{1}{2}\left(\tau_A\left(x-\mu_A\right)^2+\tau_B\left(x-\mu_B\right)^2\right)\right)\\
+&=\exp\left(-\frac{1}{2}\left((\tau_A+\tau_B)x^2-2(\tau_A\mu_A+\tau_B\mu_B)x+(\tau_A\mu_A^2+\tau_B\mu_B^2)\right)\right)\\
+&=\exp\left(-\frac{1}{2}\left((\tau_A+\tau_B)\left(x-\frac{\tau_A\mu_A+\tau_B\mu_B}{\tau_A+\tau_B}\right)^2+\frac{\tau_A\tau_B}{\tau_A+\tau_B}(\mu_A-\mu_B)^2\right)\right)\\
+&=\exp\left(-\frac{1}{2}\cdot\frac{\tau_A\tau_B}{\tau_A+\tau_B}(\mu_A-\mu_B)^2\right)\cdot\exp\left(-\frac{1}{2}(\tau_A+\tau_B)\left(x-\frac{\tau_A\mu_A+\tau_B\mu_B}{\tau_A+\tau_B}\right)^2\right)\\
+&\propto\exp\left(-\frac{1}{2}\frac{\left(x-\frac{\tau_A\mu_A+\tau_B\mu_B}{\tau_A+\tau_B}\right)^2}{\frac{1}{\tau_A+\tau_B}}\right)
+\end{aligned}
+$$
+
+$X$이 정규분포라면, 위 식으로부터 다음과 같은 값을 가진다는 것을 볼 수 있다.
+
+$$
+\begin{aligned}
+X&\sim\mathcal{N}\left(\mu_X',\sigma_X'\right)\\
+\mu_X'&=\frac{\tau_A\mu_A+\tau_B\mu_B}{\tau_A+\tau_B}=\frac{\sigma_B^2\mu_A+\sigma_A^2\mu_B}{\sigma_B^2+\sigma_A^2}\\
+\sigma_X'^2&=\frac{1}{\tau_A+\tau_B}\text{　or　}\frac{1}{\sigma_X'^2}=\frac{1}{\sigma_A^2}+\frac{1}{\sigma_B^2}
+\end{aligned}
+$$
+
+#### 두 가지의 관측값
+
+먼저 TrueSkill 레이팅에서 핵심으로 사용되는 베이즈 정리를 보자.
 
 $$
 P(S|R)\propto P(R|S)P(S)
 $$
 
-위 식의 의미는, 사후(事後)확률은 사전(事前)확률과 그에 기반하여 발생하는 사건의 확률을 곱한 것에 비례한다는 것이다. 그런데 여기서 주목할 점은, TrueSkill에서는 위 식의 각 항이 모두 정규분포라는 전제가 있다는 것이다. 즉, 아래와 같이 쓸 수 있다.
+앞에서와 같이 두 관측값을 곱해서 새로운 분포를 사용하는 형태이고, 같은 방법을 통해서 계산할 수 있다. 다만, 위 식은 앞 식에서 의미가 더 부여된 것이라고 볼 수도 있다. $S$라는 **지금까지의 관측값**이 있고, $R$이라는 **새로운 관측값**이 있을 때, 새로운 분포를 찾는 수식이다. 말로 풀어쓰자면, 사후(事後)확률은 사전(事前)확률과 그에 기반하여 발생한 사건의 확률을 곱한 것에 비례한다는 것이다.
 
-$$
-S\sim\mathcal{N}(\mu_S,\sigma_S^2)\\
-R|S\sim\mathcal{N}(\mu_R,\sigma_R^2)
-$$
+하지만 치레동에 맞는 레이팅 로직을 고민하면서 마주한 문제는 새로운 관측값 $R$이 하나가 아니라는 것이었다. 개인전 결과 $R_{Ind}$도 있고, 팀전 결과 $R_{Team}$도 있는 상황에서 어떻게 하면 이 두 관측값을 잘 버무려서 새로운 관측값 $R^\*$를 만들고, 이를 기반으로 최종 실력 $S\|R^\*$을 구할 수 있을까 하는 문제였다.
 
-이제 이를 활용하여 위 식을 확률밀도함수로 다시 써보겠다.
+여기서 앞에서의 정규분포 합성을 이용해보자. 우선 두 결과를 단순히 곱해보겠다.
 
 $$
 \begin{aligned}
-f_{S|R}(x)&\propto f_{R|S}(x)\cdot f_S(x)\\
-&=\frac{1}{\sqrt{2\pi\sigma_R^2}}\exp\left(-\frac{(x-\mu_R)^2}{2\sigma_R^2}\right)\cdot\frac{1}{\sqrt{2\pi\sigma_S^2}}\exp\left(-\frac{(x-\mu_S)^2}{2\sigma_S^2}\right)\\
-&=\frac{1}{\sqrt{2\pi\sigma_R^2}\sqrt{2\pi\sigma_S^2}}\exp\left(-\frac{1}{2}\left(\frac{(x-\mu_R)^2}{\sigma_R^2}+\frac{(x-\mu_S)^2}{\sigma_S^2}\right)\right)\\
-&\propto\exp\left(-\frac{1}{2}\left(\frac{(x-\mu_R)^2}{\sigma_R^2}+\frac{(x-\mu_S)^2}{\sigma_S^2}\right)\right)
+f_{S|R_{Ind}}(x)\cdot f_{S|R_{Team}}(x)&\propto\left(f_{R_{Ind}|S}(x)f_S(x)\right)\cdot\left(f_{R_{Team}|S}(x)f_S(x)\right)\\
+&=f_{R_{Ind}|S}(x)\cdot f_{R_{Team}|S}(x)\cdot f_S(x)^2\\
+&=\left(f_{R_{Ind}|S}(x)\cdot f_{R_{Team}|S}(x)\cdot f_S(x)\right)\cdot f_S(x)\\
 \end{aligned}
 $$
 
-여기서 $\tau$, 또는 정확도(precision)라는 것을 분산의 역수로 정의하겠다. 즉, $\tau_R=\frac{1}{\sigma_R^2}$, $\tau_S=\frac{1}{\sigma_S^2}$이다. 그러면 위 식은 아래와 같이 표현할 수 있다.
+위 식은 사전확률이 두 번 적용된 형태로 볼 수도 있고, 우도에 사전확률이 반영되는 형태로도 볼 수 있기 때문에 이를 사후확률로서 사용하기에는 조금 이상해보인다. 그래서 사전확률의 차수가 1이 되도록 거듭제곱을 한 뒤 곱해보았다.
+
+$$
+a+b=1\text{인 실수 }a,b\text{에 대해서,}\\
+\begin{aligned}
+f_{S|R_{Ind}}(x)^{a}\cdot f_{S|R_{Team}}(x)^{b}&\propto\left(f_{R_{Ind}|S}(x)f_S(x)\right)^{a}\cdot\left(f_{R_{Team}|S}(x)f_S(x)\right)^{b}\\
+&=f_{R_{Ind}|S}(x)^{a}\cdot f_{R_{Team}|S}(x)^{b}\cdot f_S(x)^{a+b}\\
+&=\left(f_{R_{Ind}|S}(x)^{a}\cdot f_{R_{Team}|S}(x)^{b}\right)\cdot f_S(x)
+\end{aligned}
+$$
+
+이렇게 하니 베이즈 정리의 꼴과 상당히 비슷한 형태가 된다. 우리가 이미 알고있는 사전확률 $f_S(x)$가 있고, 두 우도의 조합이 우도에 해당하는 항에 위치한다. 이제 여기서 앞의 괄호로 묶은 항을 $f_{R^\*\|S}(x)$로 정의하고 식을 다시 써보겠다.
 
 $$
 \begin{aligned}
-f_{S|R}(x)&\propto\exp\left(-\frac{1}{2}\left(\tau_R\left(x-\mu_R\right)^2+\tau_S\left(x-\mu_S\right)^2\right)\right)\\
-&=\exp\left(-\frac{1}{2}\left((\tau_R+\tau_S)x^2-2(\tau_R\mu_R+\tau_S\mu_S)x+(\tau_R\mu_R^2+\tau_S\mu_S^2)\right)\right)\\
-&=\exp\left(-\frac{1}{2}\left((\tau_R+\tau_S)\left(x-\frac{\tau_R\mu_R+\tau_S\mu_S}{\tau_R+\tau_S}\right)^2+\frac{\tau_R\tau_S}{\tau_R+\tau_S}(\mu_R-\mu_S)^2\right)\right)\\
-&=\exp\left(-\frac{1}{2}\cdot\frac{\tau_R\tau_S}{\tau_R+\tau_S}(\mu_R-\mu_S)^2\right)\cdot\exp\left(-\frac{1}{2}(\tau_R+\tau_S)\left(x-\frac{\tau_R\mu_R+\tau_S\mu_S}{\tau_R+\tau_S}\right)^2\right)\\
-&\propto\exp\left(-\frac{1}{2}\frac{\left(x-\frac{\tau_R\mu_R+\tau_S\mu_S}{\tau_R+\tau_S}\right)^2}{\frac{1}{\tau_R+\tau_S}}\right)
+f_{R^*|S}(x)&:= f_{R_{Ind}|S}(x)^{a}\cdot f_{R_{Team}|S}(x)^{b}\\
+f_{S|R^*}(x)&\propto f_{R^*|S}(x)\cdot f_S(x)\\
+&=\left(f_{R_{Ind}|S}(x)^{a}\cdot f_{R_{Team}|S}(x)^{b}\right)\cdot f_S(x)
 \end{aligned}
 $$
 
-$S\|R$이 정규분포라면, 위 식으로부터 다음과 같은 값을 가진다는 것을 볼 수 있다.
+이렇게 하면 우도의 조합을 새로운 우도 $f_{R^\*\|S}$로 가지는, $S\|R^\*$에 대한 베이즈 정리와 완전히 같은 형태로 볼 수 있다. 이제 실제 $S\|R^\*$에 대한 수식을 구해보자. 지금까지 진행했던 전개를 다시 되돌아가면 된다.
 
 $$
 \begin{aligned}
-S|R&\sim\mathcal{N}\left(\mu_S',\sigma_S'\right)\\
-\mu_S'&=\frac{\tau_R\mu_R+\tau_S\mu_S}{\tau_R+\tau_S}=\frac{\sigma_S^2\mu_R+\sigma_R^2\mu_S}{\sigma_S^2+\sigma_R^2}\\
-\sigma_S'^2&=\frac{1}{\tau_R+\tau_S}\text{　or　}\frac{1}{\sigma_S'^2}=\frac{1}{\sigma_R^2}+\frac{1}{\sigma_S^2}
+f_{S|R^*}(x)&\propto f_{R^*|S}(x)\cdot f_S(x)\\
+&=\left(f_{R_{Ind}|S}(x)^{a}\cdot f_{R_{Team}|S}(x)^{b}\right)\cdot f_S(x)\\
+&=\left(f_{R_{Ind}|S}(x)\cdot f_S(x)\right)^{a}\cdot\left(f_{R_{Team}|S}(x)\cdot f_S(x)\right)^{b}\\
+&\propto f_{S|R_{Ind}}(x)^{a}\cdot f_{S|R_{Team}}(x)^{b}
 \end{aligned}
 $$
 
-이미지를 통해 비교하자면 아래와 같다.
-
-![정확도 기반 정규분포 합성](/images/chzzk-racing-rating/precision-blending.png)
-
-점선으로 된 그래프는 합성하려는 두 정규분포 그래프이고, 초록색은 두 그래프를 단순히 더한 그래프, 보라색은 정확도 기반으로 합성한 그래프이다. 두 그래프 모두 사용할 수 있는 방법론이지만, 현재의 상황처럼
-
-1. 기존 데이터가 있는 상황에서
-2. 새로운 관측값이 있을 때
-3. 새로운 데이터를 만드는 것
-
-이 필요할 때에는 보라색 그래프가 더욱 적절한 방법이 될 것이다. 레이팅에 빗대서 보자면, 플레이어의 실력을 나타내는 데이터가 있고, 새로운 경기 결과라는 관측값이 있을 때, 이를 기반으로 플레이어의 실력을 업데이트하는 것이 필요할 때에는 정확도 기반 정규분포 합성이 더욱 적절한 방법이 될 것이다.
-
-#### 두 가지의 관측값
-
-위에서 소개한 베이즈 정리를 다시 보자.
+편의상 $f_{S\|R_{Ind}}(x)\sim\mathcal{N}(\mu_I,\sigma_I^2)$와 $f_{S\|R_{Team}}(x)\sim\mathcal{N}(\mu_T,\sigma_T^2)$로 나타내겠다. 새로 정의한 변수와 앞에서 유도한 두 정규분포의 합성 식을 사용한다면, 최종적으로 정규분포 $f_{S\|R^*}(x)$는 아래와 같이 된다.
 
 $$
 \begin{aligned}
-P(S|R)&\propto P(R|S)P(S)\\
-f_{S|R}(x)&\propto f_{R|S}(x)\cdot f_S(x)
+S|R^*&\sim\mathcal{N}(\mu^*, {\sigma^*}^2)\\
+\mu^*&=\frac{a\tau_I\mu_I+b\tau_T\mu_T}{a\tau_I+b\tau_T}\\
+\frac{1}{ {\sigma^*}^2}=\tau^*&=a\tau_I+b\tau_T
 \end{aligned}
 $$
 
-여기서 $R$은 관측값을 의미하는 변수다. 그런데 여기서 만약 S에 의존하는 관측값이 하나가 아니라면 어떻게 해야할까? 이 부분을 잘 생각해보아야하는 것이, 결국 레이팅에 어떻게 개인전 결과와 팀전 결과를 같이 집어넣을 수 있을지에 대한 문제와 동치이기 때문이다. 수식으로 표현하자면, 현재 실력 $S$에 대해 개인전 결과 $R_{Ind}\|S$와 팀전 결과 $R_{Team}\|S$이 있을 때, 두 결과를 잘 버무린 새로운 결과 $R^\*\|S$와 그에 대한 posterior, 최종 실력 $S\|R^\*$을 정의하는 것이 목표이다.
+이제 치레동 레이팅으로서의 목표를 되돌아보면, 개인전과 팀전 결과를 7:3 정도의 비율로 반영하는 레이팅 시스템을 만들고 싶었다. 따라서 $a=0.7$과 $b=0.3$으로 설정했다. 그렇게 하면 아래의 이미지의 빨간색 그래프와 같은 결과를 얻을 수 있다.
 
-우선 먼저 개인전 결과와 팀전 결과에 대한 수식을 정리해보자.
+![개인전과 팀전 결과를 7:3으로 반영한 레이팅 시스템](/images/chzzk-racing-rating/weighted-precision-blending.png)
 
-$$
-\begin{aligned}
-P(S|R_{Ind})&\propto P(R_{Ind}|S)P(S)\\
-P(S|R_{Team})&\propto P(R_{Team}|S)P(S)\\
-P(S|R^*)&\propto P(R^*|S)P(S)=???
-\end{aligned}
-$$
-
-여기서 우리는 이미 알고 있거나 TrueSkill을 통해 계산할 수 있는 값이 있다. 바로 $S$, $S\|R_{Ind}$, $S\|R_{Team}$이다.
+단순히 두 관측값을 곱한 그래프였던 보라색 그래프와 비교해보면, 전반적으로 빨간색 그래프가 파란색 그래프에 더 가까이 위치하는 것을 볼 수 있다. 이는 개인전 결과가 팀전 결과보다 더 높은 정확도로 관측되었기 때문인데, 실제로도 개인전 결과가 팀전 결과보다 더 높은 정확도로 관측된다고 가정했기 때문에 우리가 원하는 형태의 레이팅 시스템이 만들어졌다고 볼 수 있다. 또한, 그래프의 너비를 비교해보면,
 
 ### 결론
 
@@ -256,35 +289,8 @@ $$
 
 아무튼 결론을 내자면, 지수나 레이팅은 과거를 나타내는 값이다. 이번부터는 티어 결정이 미래 또한 고려하는 정성적인 요인을 반영하므로, 그러한 값들은 티어 결정에 있어서 이전보다는 상대적으로 큰 영향을 미치지 못할 것이다. 다만 티어 결정에 참고 자료로 활용될 수 있는 부분인만큼, 과거의 데이터를 조금 더 수학적으로 체계적인 시스템으로 다뤄보고 그 결과가 이전에 사용했던 수치와 어떠한 차이가 있는지 살펴보는 것에 의의를 두고 있다.
 
-### 여담
-
-여담으로, 데이터를 보고 어떤 선수가 과도하게 저평가 또는 고평가가 되었다고 생각되는 부분이 있다면 [트위터(현 X) 포스트](https://x.com/orb_h_/status/1995882166090440711?s=20)나 이 포스트에 댓글을 남겨주길 바란다. 이것저것 시스템을 조정해볼 때 귀중한 참고 자료로 활용될 것이다.
-
-그리고 마지막으로, 이 포스트의 부제목이기도 한 질문에 대한 답변을 해보겠다. 물론 아직 이 레이팅이 정확하다고 하기에는 제대로 검증되지는 않았지만, 지금까지의 데이터를 바탕으로 한다면 대답할 수 있을 것 같다. 2회 대회가 끝난 시점의 데이터를 한 번 보자. 아래는 2회 대회 종료 시점의 레이팅 데이터 중 일부이다.
-
-<p><table>
-<thead>
-<tr><th></th><th>순위</th><th>이름</th><th>레이팅</th><th>평균</th><th> 티어</th><th>랭킹 지수</th></tr>
-</thead>
-<tbody>
-<tr><td></td><td>11</td><td class="tier3">뽀구미</td><td><code>31.10 (-)</code></td><td><code>46.61 (-)</code></td><td class="tier3">3</td><td><code>5.200</code></td></tr>
-<tr><td></td><td>12</td><td class="tier2">김토키</td><td><code>30.94 (-)</code></td><td><code>46.27 (-)</code></td><td class="tier2">2</td><td><code>6.300</code></td></tr>
-<tr><td>→</td><td>13</td><td class="tier2">늦잠</td><td><code>29.15 (-)</code></td><td><code>47.98 (-)</code></td><td class="tier2">2</td><td><code>5.833</code></td></tr>
-<tr><td>→</td><td>14</td><td class="tier2">오단밍</td><td><code>26.83 (+20.70)</code></td><td><code>39.63 (+12.08)</code></td><td class="tier2">2</td><td><code>7.796</code></td></tr>
-<tr><td></td><td>15</td><td class="tier2">헤라</td><td><code>26.21 (+3.81)</code></td><td><code>38.55 (-2.73)</code></td><td class="tier2">2</td><td><code>7.354</code></td></tr>
-<tr><td>16</td><td class="tier1">쵸쵸우</td><td><code>25.81 (+0.01)</code></td><td><code>38.35 (-6.41)</code></td><td class="tier1">1</td><td><code>7.321</code></td></tr>
-</tbody>
-</table></p>
-
-늦잠님의 레이팅은 STINT 2에서 1위를 기록한 오단밍님보다도 높은 것으로 나타났다. 즉, 늦잠님은 최소 STINT 2에서 뛸만한 선수였고, 허위 매물이 맞았다고 볼 수 있다.
-
 ### 참조
 
-- 나무위키 문서
-  - [치레동](https://namu.wiki/w/%EC%B9%98%EB%A0%88%EB%8F%99)
-  - [치레동: 제1회 고속도로 배틀](https://namu.wiki/w/%EC%B9%98%EB%A0%88%EB%8F%99:%20%EC%A0%9C1%ED%9A%8C%20%EA%B3%A0%EC%86%8D%EB%8F%84%EB%A1%9C%20%EB%B0%B0%ED%8B%80)
-  - [치레동: 제2회 포뮬러 그랑프리](https://namu.wiki/w/%EC%B9%98%EB%A0%88%EB%8F%99:%20%EC%A0%9C2%ED%9A%8C%20%ED%8F%AC%EB%AE%AC%EB%9F%AC%20%EA%B7%B8%EB%9E%91%ED%94%84%EB%A6%AC)
-  - [치레동: 제3회 레인 헬](https://namu.wiki/w/%EC%B9%98%EB%A0%88%EB%8F%99:%20%EC%A0%9C3%ED%9A%8C%20%EB%A0%88%EC%9D%B8%20%ED%97%AC)
 - TrueSkill 공식 자료
   - 웹사이트: [Microsoft Research: TrueSkill™](https://www.microsoft.com/en-us/research/project/trueskill-ranking-system/)
   - 논문: [TrueSkill™: A Bayesian Skill Rating System](https://www.microsoft.com/en-us/research/wp-content/uploads/2006/01/TR-2006-80.pdf)
@@ -299,3 +305,5 @@ $$
 [^2]: 흔히 통계학에서 사용하는 값인 0.997을 가져와서 사용하다보니 위에서 언급한 값과 약간의 차이가 발생했는데, 더 정확한 값인 0.9973을 사용해보면 거의 유사한 값이 나온다.
 
 [^3]: 다만 실제로 100점 만점인 것은 아니고, 압도적인 실력을 계속 보여준다면 100점이 넘는 레이팅도 충분히 나올 수 있다.
+
+[^4]: $X$와 $Y$가 서로 독립이어야 한다는 조건 등이 붙을 수 있지만 여기서 자세히 다루지는 않겠다.
