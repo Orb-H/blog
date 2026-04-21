@@ -4,7 +4,7 @@ title: "치레동 레이팅 설계해보기 (수식)"
 latex_needed: true
 comment: true
 
-excerpt: "진짜로 수식이 궁금하신가요"
+excerpt: "진짜로 뭘 어떻게 했는지 궁금하신가요"
 topic: "레이팅"
 keyword:
   - "치지직 레이싱 동아리"
@@ -75,7 +75,7 @@ modified_date:
 1. 꾸준한 퍼포먼스를 반영하는 레이팅
 1. 대결한 선수의 실력에 따른 레이팅 보정
 
-또한 주석으로 언급하기는 했으나 랭킹 지수 자체에도 약간 수학적 결함이 있다. 다만 사소한 내용이니 궁금하다면 클릭해서 펼쳐보면 좋을 것 같다.
+또한 주석으로 언급하기는 했으나 랭킹 지수 자체에도 약간 수학적 결함이 있다. 아래 글씨를 클릭하면 볼 수 있으니 관심이 있다면 확인해보길 바란다.
 
 <p><details>
 <summary><u>랭킹 지수의 (사소한) 수학적 결함</u></summary>
@@ -89,12 +89,19 @@ $$
 \end{aligned}
 $$
 
-여기서 랭킹 지수에 문제가 있다. 치레동 1회에서 만약 압도적인 실력으로 티어 지수 1을 기록했다면, 랭킹 지수가 어떻게 될까? $\frac{10}{1}\times\frac{1}{12}=0.8333...$이 되어 랭킹 지수가 1보다 낮아진다. 이는 <b>10명이 참가하는 대회에서 대략적으로 획득할 것으로 기대하는 순위인데, 이것이 1보다 작아지는 것</b>이다. 따라서 개인적으로는 아래와 같은 정의가 더 낫지 않았을까 하는 생각도 있다. 항상 <b>1 이상</b>의 값이 보장되고 상한값은 기존과 같이 10이다.
+여기서 랭킹 지수에 문제가 있다. 치레동 1회에서 만약 압도적인 실력으로 티어 지수 1을 기록했다면, 랭킹 지수가 어떻게 될까? $\frac{10}{1}\times\frac{1}{12}=0.8333...$이 되어 랭킹 지수가 1보다 낮아진다. 이는 <b>10명이 참가하는 대회에서 대략적으로 획득할 것으로 기대하는 순위인데, 이것이 1보다 작아지는 것</b>이다. 따라서 개인적으로는 아래와 같은 정의가 더 낫지 않았을까 하는 생각도 있다. 항상 1 이상의 값이 보장되고 상한값은 기존과 같이 10이 된다.
+
+$$
+\text{랭킹 지수}=\color{blue}{1+}\frac{10\color{blue}{-1}}{\left|I_A\right|}\sum_{j \in I_A}\frac{T_j^A\color{blue}{-1}}{P_j\color{blue}{-1}}
+$$
 
 $$
 \begin{aligned}
-\text{랭킹 지수}&=\color{blue}{1 +}\frac{10}{\left|I_A\right|} \sum_{j \in I_A}\frac{T_j^A\color{blue}{-1}}{P_j\color{blue}{-1}}\\
-\text{티어 지수}(T)&=\frac{1}{n}\sum_{i=1}^n \left(0.3Q_i+0.7R_i\right)
+1\leq T_j^A\leq P_j&\Rightarrow 0\leq\frac{T_j^A-1}{P_j-1}\leq 1\\
+&\Rightarrow0\leq\sum_{j \in I_A}\frac{T_j^A-1}{P_j-1}\leq\sum_{j \in I_A}1\\
+&\Rightarrow 0\leq\sum_{j \in I_A}\frac{T_j^A-1}{P_j-1}\leq\left|I_A\right|\\
+&\Rightarrow 0\leq\frac{10-1}{\left|I_A\right|}\sum_{j \in I_A}\frac{T_j^A-1}{P_j-1}\leq 9\\
+&\Rightarrow 1\leq 1+\frac{10-1}{\left|I_A\right|}\sum_{j \in I_A}\frac{T_j^A-1}{P_j-1}\leq 10
 \end{aligned}
 $$
 
@@ -221,15 +228,15 @@ $$
 
 앞에서와 같이 두 관측값을 곱해서 새로운 분포를 사용하는 형태이고, 같은 방법을 통해서 계산할 수 있다. 다만, 위 식은 앞 식에서 의미가 더 부여된 것이라고 볼 수도 있다. $S$라는 **지금까지의 관측값**이 있고, $R$이라는 **새로운 관측값**이 있을 때, 새로운 분포를 찾는 수식이다. 말로 풀어쓰자면, 사후(事後)확률은 사전(事前)확률과 그에 기반하여 발생한 사건의 확률을 곱한 것에 비례한다는 것이다.
 
-하지만 치레동에 맞는 레이팅 로직을 고민하면서 마주한 문제는 새로운 관측값 $R$이 하나가 아니라는 것이었다. 개인전 결과 $R_{Ind}$도 있고, 팀전 결과 $R_{Team}$도 있는 상황에서 어떻게 하면 이 두 관측값을 잘 버무려서 새로운 관측값 $R^\*$를 만들고, 이를 기반으로 최종 실력 $S\|R^\*$을 구할 수 있을까 하는 문제였다.
+하지만 치레동에 맞는 레이팅 로직을 고민하면서 마주한 문제는 새로운 관측값 $R$이 하나가 아니라는 것이었다. 개인전 순위에 따른 결과도 있고, 팀전 순위에 따른 결과도 있는 상황에서 어떻게 하면 이 두 관측값을 잘 버무려서 새로운 관측값 $R^\*$를 만들고, 이를 기반으로 최종 실력 $S\|R^\*$을 구할 수 있을까 하는 문제였다.
 
-여기서 앞에서의 정규분포 합성을 이용해보자. 우선 두 결과를 단순히 곱해보겠다.
+여기서 앞에서의 정규분포 합성을 이용해보자. 우선 두 결과를 단순히 곱해보겠다. 합성하고 싶은 두 관측값을 각각 $R_A$, $R_B$라고 쓰겠다.
 
 $$
 \begin{aligned}
-f_{S|R_{Ind}}(x)\cdot f_{S|R_{Team}}(x)&\propto\left(f_{R_{Ind}|S}(x)f_S(x)\right)\cdot\left(f_{R_{Team}|S}(x)f_S(x)\right)\\
-&=f_{R_{Ind}|S}(x)\cdot f_{R_{Team}|S}(x)\cdot f_S(x)^2\\
-&=\left(f_{R_{Ind}|S}(x)\cdot f_{R_{Team}|S}(x)\cdot f_S(x)\right)\cdot f_S(x)\\
+f_{S|R_A}(x)\cdot f_{S|R_B}(x)&\propto\left(f_{R_A|S}(x)f_S(x)\right)\cdot\left(f_{R_B|S}(x)f_S(x)\right)\\
+&=f_{R_A|S}(x)\cdot f_{R_B|S}(x)\cdot f_S(x)^2\\
+&=\left(f_{R_A|S}(x)\cdot f_{R_B|S}(x)\cdot f_S(x)\right)\cdot f_S(x)\\
 \end{aligned}
 $$
 
@@ -238,9 +245,9 @@ $$
 $$
 a+b=1\text{인 실수 }a,b\text{에 대해서,}\\
 \begin{aligned}
-f_{S|R_{Ind}}(x)^{a}\cdot f_{S|R_{Team}}(x)^{b}&\propto\left(f_{R_{Ind}|S}(x)f_S(x)\right)^{a}\cdot\left(f_{R_{Team}|S}(x)f_S(x)\right)^{b}\\
-&=f_{R_{Ind}|S}(x)^{a}\cdot f_{R_{Team}|S}(x)^{b}\cdot f_S(x)^{a+b}\\
-&=\left(f_{R_{Ind}|S}(x)^{a}\cdot f_{R_{Team}|S}(x)^{b}\right)\cdot f_S(x)
+f_{S|R_A}(x)^{a}\cdot f_{S|R_B}(x)^{b}&\propto\left(f_{R_A|S}(x)f_S(x)\right)^{a}\cdot\left(f_{R_B|S}(x)f_S(x)\right)^{b}\\
+&=f_{R_A|S}(x)^{a}\cdot f_{R_B|S}(x)^{b}\cdot f_S(x)^{a+b}\\
+&=\left(f_{R_A|S}(x)^{a}\cdot f_{R_B|S}(x)^{b}\right)\cdot f_S(x)
 \end{aligned}
 $$
 
@@ -248,9 +255,9 @@ $$
 
 $$
 \begin{aligned}
-f_{R^*|S}(x)&:= f_{R_{Ind}|S}(x)^{a}\cdot f_{R_{Team}|S}(x)^{b}\\
+f_{R^*|S}(x)&:= f_{R_A|S}(x)^{a}\cdot f_{R_B|S}(x)^{b}\\
 f_{S|R^*}(x)&\propto f_{R^*|S}(x)\cdot f_S(x)\\
-&=\left(f_{R_{Ind}|S}(x)^{a}\cdot f_{R_{Team}|S}(x)^{b}\right)\cdot f_S(x)
+&=\left(f_{R_A|S}(x)^{a}\cdot f_{R_B|S}(x)^{b}\right)\cdot f_S(x)
 \end{aligned}
 $$
 
@@ -259,27 +266,57 @@ $$
 $$
 \begin{aligned}
 f_{S|R^*}(x)&\propto f_{R^*|S}(x)\cdot f_S(x)\\
-&=\left(f_{R_{Ind}|S}(x)^{a}\cdot f_{R_{Team}|S}(x)^{b}\right)\cdot f_S(x)\\
-&=\left(f_{R_{Ind}|S}(x)\cdot f_S(x)\right)^{a}\cdot\left(f_{R_{Team}|S}(x)\cdot f_S(x)\right)^{b}\\
-&\propto f_{S|R_{Ind}}(x)^{a}\cdot f_{S|R_{Team}}(x)^{b}
+&=\left(f_{R_A|S}(x)^{a}\cdot f_{R_B|S}(x)^{b}\right)\cdot f_S(x)\\
+&=\left(f_{R_A|S}(x)\cdot f_S(x)\right)^{a}\cdot\left(f_{R_B|S}(x)\cdot f_S(x)\right)^{b}\\
+&\propto f_{S|R_A}(x)^{a}\cdot f_{S|R_B}(x)^{b}
 \end{aligned}
 $$
 
-편의상 $f_{S\|R_{Ind}}(x)\sim\mathcal{N}(\mu_I,\sigma_I^2)$와 $f_{S\|R_{Team}}(x)\sim\mathcal{N}(\mu_T,\sigma_T^2)$로 나타내겠다. 새로 정의한 변수와 앞에서 유도한 두 정규분포의 합성 식을 사용한다면, 최종적으로 정규분포 $f_{S\|R^*}(x)$는 아래와 같이 된다.
+편의상 $f_{S\|R_A}(x)\sim\mathcal{N}(\mu_A,\sigma_A^2)$와 $f_{S\|R_B}(x)\sim\mathcal{N}(\mu_B,\sigma_B^2)$로 나타내겠다. 새로 정의한 변수와 앞에서 유도한 두 정규분포의 합성 식을 사용한다면, 최종적으로 정규분포 $f_{S\|R^*}(x)$는 아래와 같이 된다.
 
 $$
 \begin{aligned}
 S|R^*&\sim\mathcal{N}(\mu^*, {\sigma^*}^2)\\
-\mu^*&=\frac{a\tau_I\mu_I+b\tau_T\mu_T}{a\tau_I+b\tau_T}\\
-\frac{1}{ {\sigma^*}^2}=\tau^*&=a\tau_I+b\tau_T
+\mu^*&=\frac{a\tau_A\mu_A+b\tau_B\mu_B}{a\tau_A+b\tau_B}\\
+{\sigma^*}^2=\frac{1}{\tau^*}&=\frac{1}{a\tau_A+b\tau_B}
 \end{aligned}
 $$
 
-이제 치레동 레이팅으로서의 목표를 되돌아보면, 개인전과 팀전 결과를 7:3 정도의 비율로 반영하는 레이팅 시스템을 만들고 싶었다. 따라서 $a=0.7$과 $b=0.3$으로 설정했다. 그렇게 하면 아래의 이미지의 빨간색 그래프와 같은 결과를 얻을 수 있다.
+이제 테스트로 $a$와 $b$를 각각 0.5로 설정해서 앞에서 만들었던 그래프와 비교해보겠다.
 
-![개인전과 팀전 결과를 7:3으로 반영한 레이팅 시스템](/images/chzzk-racing-rating/weighted-precision-blending.png)
+![가중치를 적용한 그래프와 비교](/images/chzzk-racing-rating/weighted-precision-blending.png)
 
-단순히 두 관측값을 곱한 그래프였던 보라색 그래프와 비교해보면, 전반적으로 빨간색 그래프가 파란색 그래프에 더 가까이 위치하는 것을 볼 수 있다. 이는 개인전 결과가 팀전 결과보다 더 높은 정확도로 관측되었기 때문인데, 실제로도 개인전 결과가 팀전 결과보다 더 높은 정확도로 관측된다고 가정했기 때문에 우리가 원하는 형태의 레이팅 시스템이 만들어졌다고 볼 수 있다. 또한, 그래프의 너비를 비교해보면,
+보라색 그래프와 빨간색 그래프를 비교해보자면, 우선 봉우리의 위치는 같다. 하지만 너비와 높이가 다른 것을 볼 수 있다. 이전에 그렸던 보라색 그래프는 합성에 사용한 두 그래프보다도 더 좁게 나타나지만, 그에 반해서 빨간색 그래프는 두 그래프의 너비의 중간에 해당하는 너비를 가진다. 수식의 의미 상으로나, **두 결과를 조합해서 하나의 결과**로서 반영한다는 의도로나, 빨간색 그래프가 보라색 그래프보다 더 적절해보인다. a와 b의 값을 조정해서 어느 쪽에 더 가중치를 줄지도 조정할 수 있다. 아래의 그래프는 a와 b를 바꿔가면서 그린 그래프이다.
+
+![여러 가중치에 대한 그래프](/images/chzzk-racing-rating/weighted-precision-blendings.png)
+
+전반적으로 a가 커질수록 평균이 왼쪽으로 이동하고, b가 커질수록 평균이 오른쪽으로 이동하는 것을 볼 수 있다. 또한 너비도 a가 커질수록 왼쪽 그래프의 너비에 가까워지고, b가 커질수록 오른쪽 그래프의 너비에 가까워지는 것을 볼 수 있다. 평균과 표준편차가 두 그래프 사이가 되는 것을 보아 두 그래프의 lerp로 생각할 수도 있을 것 같다. 이러한 과정을 앞으로 아래의 함수로 쓰겠다.
+
+$$
+\begin{aligned}
+L(S, R_A, R_B, a)&\sim\mathcal{N}(\mu_T,\sigma_T^2)\\
+\mu_T&=\frac{a\tau_A\mu_A+(1-a)\tau_B\mu_B}{a\tau_A+(1-a)\tau_B}\\
+\sigma_T^2&=\frac{1}{a\tau_A+(1-a)\tau_B}
+\end{aligned}
+$$
+
+#### 결과를 조금만 반영하기
+
+위 식은 두 사후확률이 있을 때 둘을 합성하는 방법이다. 그런데 꼭 합성하는 것이 꼭 사후확률이어야 할까? 사실 정규분포인 것이면 아무거나 상관없지 않을까 하는 생각이 들었다. 즉, 굳이 관측값 $R_B$가 아닌, $f_{S\|I}(x)=f_S(x)$를 만족하는 어떤 관측값 $I$에 대해 $R_A$와 $I$를 합성하는 것도 가능하다는 것이다. 그러면 아래와 같이 식을 전개할 수 있다.
+
+$$
+\begin{aligned}
+f_{S|R^*}(x)&\propto f_{R^*|S}(x)\cdot f_S(x)\\
+&=\left(f_{R_A|S}(x)^a\cdot f_{I|S}(x)^{1-a}\right)\cdot f_S(x)\\
+&=\left(f_{R_A|S}(x)\cdot f_S(x)\right)^a\cdot\left(f_{I|S}(x)\cdot f_S(x)\right)^{1-a}\\
+&\propto f_{S|R_A}(x)^a\cdot f_{S|I}(x)^{1-a}\\
+&=f_{S|R_A}(x)^a\cdot f_S(x)^{1-a}
+\end{aligned}
+$$
+
+위 식의 의미를 풀어보자면, 관측값 $R_A$의 결과를 $a(a<1)$만큼 반영하고 나머지 $1-a$에 대한 부분은 사전확률을 그대로 반영하는 것이다. 즉, $R_A$의 결과를 완전히 반영하는 것이 아니라, $a$의 값에 따라서 $R_A$의 결과를 조금만 반영하는 것이다. 수식으로 나타내자면 $L(S, R_A, I, a)$에 해당하는 연산이고, 이를 $a$만큼의 가중치로 $R_A$의 결과를 반영하는 연산으로 사용할 수 있을 것 같다.
+
+#### 치레동에 적용
 
 ### 결론
 
